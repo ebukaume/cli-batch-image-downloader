@@ -1,0 +1,8 @@
+# Files
+.DS_Store
+
+# Folders
+dist
+node_modules
+result
+images
