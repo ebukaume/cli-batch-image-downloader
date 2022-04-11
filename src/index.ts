@@ -23,7 +23,6 @@ async function run(): Promise<void> {
   const rawInput = await ioManager.readTextFile(inputFile);
   const imageUrls = util.spaceSeparatedToArrayOfTexts(rawInput);
   const { validUrls, invalidUrls } = util.sanitizeUrl(imageUrls);
-  console.log({ options })
   util.prepareOutputDirectory(options.outputDir!);
   
   console.warn(`You have ${invalidUrls.length} malformed image urls`)

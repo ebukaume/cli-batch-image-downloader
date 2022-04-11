@@ -22,12 +22,16 @@ class Task {
     const batches = chunk(this.taskOption.urls, this.taskOption.concurrency);
     
     for(const batch in batches) {
-      await Promise.all(
-        batches[batch].map((url, index) => this.imageDownloader.downloadImage(url, this.outPutStreamCreator(this.filename(batch, index))))
-      );
-      counter += batches[batch].length;
-
-      console.log(`Processed ${counter} tasks so far...`);
+      try {
+        await Promise.all(
+          batches[batch].map((url, index) => this.imageDownloader.downloadImage(url, this.outPutStreamCreator(this.filename(batch, index))))
+        );
+        
+        counter += batches[batch].length;
+        console.log(`Processed ${counter} tasks so far...`);
+      } catch (error) {
+        console.error(`An unexpected error occurred! Err: ${error}`)
+      }
     }
     console.log(`Processed ${counter} in total!`);
   }
