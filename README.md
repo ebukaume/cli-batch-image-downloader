@@ -50,6 +50,9 @@ $ npm install
 $ npm run build
 $ npm start -- [input file] [options]
 ```
+> Example
+
+` npm start -- test.txt -o result -c 1 -p img `
 
 ### Command-line Options 
 
