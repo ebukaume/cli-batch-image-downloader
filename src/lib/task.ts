@@ -6,7 +6,7 @@ import { ImageDownloader } from "./image-downloader";
 interface TaskOption {
   urls: string[],
   outputDir: string,
-  concurency?: number,
+  concurrency?: number,
   prefix?: string,
 }
 
@@ -19,7 +19,7 @@ class Task {
 
   async start(): Promise<void> {
     let counter = 0;
-    const batches = chunk(this.taskOption.urls, this.taskOption.concurency);
+    const batches = chunk(this.taskOption.urls, this.taskOption.concurrency);
     
     for(const batch in batches) {
       await Promise.all(

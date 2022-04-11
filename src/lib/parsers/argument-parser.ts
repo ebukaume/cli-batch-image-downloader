@@ -3,7 +3,7 @@ import { join } from 'path';
 
 interface Options {
   outputDir?: string,
-  concurency?: number,
+  concurrency?: number,
   prefix?: string,
 }
 
@@ -19,10 +19,10 @@ interface Arguments {
 
 const map: Record<string, keyof Options> = {
   '-o': 'outputDir',
-  '-c': 'concurency',
+  '-c': 'concurrency',
   '-p': 'prefix',
   '--output=': 'outputDir',
-  '-concurency=': 'concurency',
+  '-concurrency=': 'concurrency',
   '-prefix=': 'prefix',
 }
 
@@ -36,11 +36,13 @@ class ArgumentParser {
   }
 
   private parserOptions(options: string[]): Options {
-    const defaultValues: Record<string, string | number> = {};
+    const defaultValues: Record<string, string | number> = {
+      outputDir: this.getAbsolutePath(''),
+    };
     const runTime = this.getRunTime();
 
-    if(this.defaults?.concurency) {
-      defaultValues.concurency = this.defaults.concurency
+    if(this.defaults?.concurrency) {
+      defaultValues.concurrency = this.defaults.concurrency
     }
 
     if(this.defaults?.prefix) {
@@ -56,9 +58,9 @@ class ArgumentParser {
 
       if(!option) throw new Error(`Unknown option ${option}`);
 
-      acc[option] = option === 'concurency' ? this.ensureValueIsInteger(value) : value;
+      acc[option] = option === 'concurrency' ? this.ensureValueIsInteger(value) : value;
 
-      if(option === 'concurency') {
+      if(option === 'concurrency') {
         acc[option] = this.ensureValueIsInteger(value);
       } else if(option === 'outputDir') {
         acc[option] = this.getAbsolutePath(value);
@@ -69,7 +71,7 @@ class ArgumentParser {
       }
 
       return acc;
-    }, {} as Record<string, string | number>);
+    }, defaultValues);
   }
 
   private ensureValueIsInteger(value: string): number {

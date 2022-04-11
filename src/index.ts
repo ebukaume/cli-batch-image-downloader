@@ -13,7 +13,7 @@ async function run(): Promise<void> {
   const argumentParser = new ArgumentParser({
     rootDir: PROJECT_DIR,
     outputDir: DEFAULT_OUTPUT_DIR,
-    concurency: DEFAUTL_CONCURRENCY,
+    concurrency: DEFAUTL_CONCURRENCY,
   });
   const ioManager = new IOManager();
   const imageDownloader = new ImageDownloader();
@@ -23,6 +23,7 @@ async function run(): Promise<void> {
   const rawInput = await ioManager.readTextFile(inputFile);
   const imageUrls = util.spaceSeparatedToArrayOfTexts(rawInput);
   const { validUrls, invalidUrls } = util.sanitizeUrl(imageUrls);
+  console.log({ options })
   util.prepareOutputDirectory(options.outputDir!);
   
   console.warn(`You have ${invalidUrls.length} malformed image urls`)
@@ -31,7 +32,7 @@ async function run(): Promise<void> {
     urls: validUrls,
     outputDir: options.outputDir!,
     prefix: options.prefix,
-    concurency: options.concurency,
+    concurrency: options.concurrency,
   });
 
   await task.start();
