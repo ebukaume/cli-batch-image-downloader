@@ -1,13 +1,13 @@
 <h1 align="center">Image Downloader</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/ebukaume/getsafe-image-downloader#readme" target="_blank">
+  <a href="https://github.com/ebukaume/cli-batch-image-downloader#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/ebukaume/getsafe-image-downloader/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/ebukaume/cli-batch-image-downloader/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/ebukaume/getsafe-image-downloader/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/ebukaume/cli-batch-image-downloader/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/ebukaume/bookstore-api" />
   </a>
   <a href="https://twitter.com/ebukaume" target="_blank">
@@ -21,10 +21,10 @@
 
 Imagine you are employed at a hypothetical company called “The Big Picture Corp” where
 the product department is requesting a tool to download a list of images from a plain text
-file. For now there are not many requirements from product yet and you only know that they
-want a simple command line tool for downloading images from a list of urls and stores them
-on the local harddrive. From the product vision however, it’s already clear that having the
-functionality of batch downloading images will be important to the product and is likely to
+file. For now, there are not many requirements from the product yet and you only know that they
+want a simple command line tool for downloading images from a list of URLs and storing them
+on the local hard drive. From the product vision however, it’s already clear that having the
+functionality of batch-downloading images will be important to the product and is likely to
 be used in several different contexts.
 
 ## Technologies
@@ -38,13 +38,13 @@ be used in several different contexts.
 > Clone the repository to your local machine
 
 ```sh
-$ git clone https://github.com/ebukaume/getsafe-image-downloader.git
+$ git clone https://github.com/ebukaume/cli-batch-image-downloader.git
 ```
 
 > cd into the project directory, install dependencies, build and start
 
 ```sh
-$ cd getsafe-image-downloader
+$ cd cli-batch-image-downloader
 $ nvm install <or use whichever means you manage your node version>
 $ npm install
 $ npm run build
@@ -57,16 +57,16 @@ $ npm start -- [input file] [options]
 ### Command-line Options 
 
 ```
--o or --output  Output directory. NB: If this is not provided, images will be save in [images] folder
+-o or --output  Output directory. NB: If this is not provided, images will be saved in [images] folder
 -c or --concurrency  Number of concurrent downloads. NB: if concurrency is not provided, the script will default to 1
 -p or --prefix  Prefix to append to images downloaded
 ```
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ebukaume/cli-batch-image-downloader/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ebukaumecli-batch-image-downloader/issues).
 
-1. Fork it (https://github.com/ebukaume/cli-batch-image-downloader.git/fork)
+1. Fork it (https://github.com/ebukaumecli-batch-image-downloader.git/fork)
 2. Create your working branch (git checkout -b [choose-a-name])
 3. Commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. Push to the branch (git push origin [chosen-name])
