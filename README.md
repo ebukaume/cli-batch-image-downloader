@@ -64,9 +64,9 @@ $ npm start -- [input file] [options]
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ebukaume/getsafe-image-downloader/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ebukaume/cli-batch-image-downloader/issues).
 
-1. Fork it (https://github.com/ebukaume/getsafe-image-downloader.git/fork)
+1. Fork it (https://github.com/ebukaume/cli-batch-image-downloader.git/fork)
 2. Create your working branch (git checkout -b [choose-a-name])
 3. Commit your changes (git commit -am 'what this commit will fix/add/improve')
 4. Push to the branch (git push origin [chosen-name])
